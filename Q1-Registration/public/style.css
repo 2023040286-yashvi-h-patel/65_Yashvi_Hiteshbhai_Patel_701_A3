@@ -1,0 +1,72 @@
+body {
+    font-family: Arial;
+    background: #f4f6f8;
+    padding: 30px;
+}
+
+.box {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input {
+    padding: 9px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.inline {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+.inline input {
+    width: auto;
+}
+
+.errors {
+    background: #ffe5e5;
+    color: red;
+    padding: 10px;
+}
+
+button,
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 18px;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.pic {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 5px;
+}

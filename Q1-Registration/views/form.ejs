@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>User Registration</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>User Registration Form</h1>
+
+
+<% if (errors.length > 0) { %>
+
+<div class="errors">
+
+    <% errors.forEach(function(error) { %>
+
+        <p>
+            <%= error.msg %>
+        </p>
+
+    <% }); %>
+
+</div>
+
+<% } %>
+
+
+<form
+    action="/register"
+    method="POST"
+    enctype="multipart/form-data"
+>
+
+
+<label>Username</label>
+
+<input
+    type="text"
+    name="username"
+    value="<%= values.username || '' %>"
+>
+
+
+<label>Password</label>
+
+<input
+    type="password"
+    name="password"
+>
+
+
+<label>Confirm Password</label>
+
+<input
+    type="password"
+    name="confirmPassword"
+>
+
+
+<label>Email</label>
+
+<input
+    type="email"
+    name="email"
+    value="<%= values.email || '' %>"
+>
+
+
+<label>Gender</label>
+
+<label class="inline">
+
+<input
+    type="radio"
+    name="gender"
+    value="Male"
+    <%= values.gender === "Male"
+        ? "checked"
+        : "" %>
+>
+
+Male
+
+</label>
+
+
+<label class="inline">
+
+<input
+    type="radio"
+    name="gender"
+    value="Female"
+    <%= values.gender === "Female"
+        ? "checked"
+        : "" %>
+>
+
+Female
+
+</label>
+
+
+<label class="inline">
+
+<input
+    type="radio"
+    name="gender"
+    value="Other"
+    <%= values.gender === "Other"
+        ? "checked"
+        : "" %>
+>
+
+Other
+
+</label>
+
+
+<label>Hobbies</label>
+
+
+<%
+const selectedHobbies =
+    Array.isArray(values.hobbies)
+        ? values.hobbies
+        : values.hobbies
+            ? [values.hobbies]
+            : [];
+%>
+
+
+<% ["Reading", "Music", "Sports", "Coding"].forEach(function(hobby) { %>
+
+<label class="inline">
+
+<input
+    type="checkbox"
+    name="hobbies"
+    value="<%= hobby %>"
+    <%= selectedHobbies.includes(hobby)
+        ? "checked"
+        : "" %>
+>
+
+<%= hobby %>
+
+</label>
+
+<% }); %>
+
+
+<label>
+Profile Picture
+</label>
+
+<input
+    type="file"
+    name="profilePic"
+    accept="image/*"
+>
+
+
+<label>
+Other Pictures
+</label>
+
+<input
+    type="file"
+    name="otherPics"
+    accept="image/*"
+    multiple
+>
+
+
+<button type="submit">
+Register
+</button>
+
+
+</form>
+
+</div>
+
+</body>
+
+</html>

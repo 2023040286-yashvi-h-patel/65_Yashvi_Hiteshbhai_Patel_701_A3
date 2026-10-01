@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Registration Result</title>
+
+    <link
+        rel="stylesheet"
+        href="/style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Registration Successful</h1>
+
+
+<table>
+
+<tr>
+
+<th>Field</th>
+
+<th>Value</th>
+
+</tr>
+
+
+<tr>
+
+<td>Username</td>
+
+<td>
+<%= data.username %>
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Email</td>
+
+<td>
+<%= data.email %>
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Gender</td>
+
+<td>
+<%= data.gender %>
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Hobbies</td>
+
+<td>
+<%= data.hobbies.join(", ") %>
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Profile Picture</td>
+
+<td>
+
+<% if (data.profilePic) { %>
+
+<img
+    class="pic"
+    src="<%= data.profilePic %>"
+>
+
+<% } %>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Other Pictures</td>
+
+<td>
+
+<% data.otherPics.forEach(function(pic) { %>
+
+<img
+    class="pic"
+    src="<%= pic %>"
+>
+
+<% }); %>
+
+</td>
+
+</tr>
+
+</table>
+
+
+<a
+    class="button"
+    href="/download/<%= fileName %>"
+>
+
+Download Registration File
+
+</a>
+
+
+<br><br>
+
+<a href="/">
+Register Another User
+</a>
+
+
+</div>
+
+</body>
+
+</html>

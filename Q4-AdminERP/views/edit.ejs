@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Edit Employee</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+
+        .box {
+            width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #333;
+            color: white;
+            border: none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Edit Employee</h1>
+
+    <form
+        action="/employees/edit/<%= employee._id %>"
+        method="POST"
+    >
+
+        <label>Name</label>
+
+        <input
+            type="text"
+            name="name"
+            value="<%= employee.name %>"
+            required
+        >
+
+
+        <label>Email</label>
+
+        <input
+            type="email"
+            name="email"
+            value="<%= employee.email %>"
+            required
+        >
+
+
+        <label>Department</label>
+
+        <input
+            type="text"
+            name="department"
+            value="<%= employee.department %>"
+            required
+        >
+
+
+        <label>Basic Salary</label>
+
+        <input
+            type="number"
+            name="basicSalary"
+            value="<%= employee.basicSalary %>"
+            required
+        >
+
+
+        <button type="submit">
+            Update Employee
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/employees">
+        Back
+    </a>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Home</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>
+            Welcome <%= username %>!
+        </h1>
+
+        <h2>
+            Home Page
+        </h2>
+
+        <p>
+            You are successfully logged in.
+        </p>
+
+
+        <div class="links">
+
+            <a href="/profile">
+                Protected Route 1 - Profile
+            </a>
+
+
+            <a href="/dashboard">
+                Protected Route 2 - Dashboard
+            </a>
+
+
+            <a href="/logout" class="logout">
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

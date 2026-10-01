@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Employees</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+
+        .box {
+            width: 1100px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background: #333;
+            color: white;
+        }
+
+        a {
+            color: blue;
+        }
+
+        button {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Employee List</h1>
+
+    <p>
+        <a href="/dashboard">Dashboard</a> |
+        <a href="/employees/add">Add Employee</a> |
+        <a href="/logout">Logout</a>
+    </p>
+
+
+    <table>
+
+        <tr>
+
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Basic Salary</th>
+            <th>HRA</th>
+            <th>DA</th>
+            <th>Total Salary</th>
+            <th>Actions</th>
+
+        </tr>
+
+
+        <% employees.forEach(employee => { %>
+
+        <tr>
+
+            <td>
+                <%= employee.empid %>
+            </td>
+
+            <td>
+                <%= employee.name %>
+            </td>
+
+            <td>
+                <%= employee.email %>
+            </td>
+
+            <td>
+                <%= employee.department %>
+            </td>
+
+            <td>
+                <%= employee.basicSalary %>
+            </td>
+
+            <td>
+                <%= employee.hra %>
+            </td>
+
+            <td>
+                <%= employee.da %>
+            </td>
+
+            <td>
+                <%= employee.totalSalary %>
+            </td>
+
+            <td>
+
+                <a href="/employees/<%= employee._id %>">
+                    Details
+                </a>
+
+                |
+
+                <a href="/employees/edit/<%= employee._id %>">
+                    Edit
+                </a>
+
+                <br><br>
+
+                <form
+                    action="/employees/delete/<%= employee._id %>"
+                    method="POST"
+                >
+
+                    <button type="submit">
+                        Delete
+                    </button>
+
+                </form>
+
+            </td>
+
+        </tr>
+
+        <% }) %>
+
+    </table>
+
+</div>
+
+</body>
+
+</html>
